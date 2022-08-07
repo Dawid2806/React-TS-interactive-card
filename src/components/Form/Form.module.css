@@ -1,0 +1,55 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 5rem auto 0;
+}
+.input {
+  border: 1px solid #dfdee0;
+  border-radius: 8px;
+  height: 45px;
+  padding: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.input::placeholder {
+  color: #dfdee0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#dateInputMM {
+  width: 20%;
+}
+.expContainer {
+  display: flex;
+  flex-direction: column;
+}
+#dateInputYY {
+  width: 20%;
+  margin-left: 1rem;
+}
+#cvc {
+  display: flex;
+  width: 4rem;
+}
+label {
+  text-transform: uppercase;
+}
+
+.button {
+  padding: 1rem;
+  background-color: #21092f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+}
+@media (min-width: 1200px) {
+  .form {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

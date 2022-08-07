@@ -1,0 +1,76 @@
+.cardFront {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, 10%);
+  background: url("/dist/images/bg-card-front.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 160px;
+}
+.chipsContainer {
+  display: flex;
+  align-items: center;
+}
+.chip {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.chipMini {
+  height: 15px;
+  width: 15px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.cardNumber {
+  font-size: 18px;
+  margin: 1.5rem 0 0.5rem 1rem;
+  letter-spacing: 3px;
+  color: #fff;
+}
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.cardName,
+.expiryDate {
+  margin-left: 1rem;
+  color: #fff;
+  font-size: 12px;
+}
+.expiryDate {
+  margin-right: 1rem;
+}
+@media (min-width: 1200px) {
+  .cardFront {
+    position: absolute;
+    top: 35%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 250px;
+    filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+  }
+  .cardNumber {
+    font-size: 28px;
+    margin: 3rem 0 2rem 1rem;
+    letter-spacing: 3px;
+    color: #fff;
+  }
+
+  .cardName,
+  .expiryDate {
+    margin-left: 1rem;
+    color: #fff;
+    font-size: 14px;
+  }
+}

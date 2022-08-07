@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from "./app.module.css";
+import { CardBack } from "./components/CardBack/CardBack";
+import { CardFront } from "./components/CardFront/CardFront";
+import { Form } from "./components/Form/Form";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.App}>
+      <div className={classes.card_container}>
+        <CardBack />
+        <CardFront />
+      </div>
+      <div className={classes.form}>
+        <Form />
+      </div>
     </div>
   );
 }
