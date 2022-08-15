@@ -2,6 +2,9 @@
 body {
   font-family: "Space Grotesk", sans-serif;
 }
+:root {
+  --linear: linear-gradient(163.95deg, #6348fe 4.74%, #610595 88.83%);
+}
 * {
   margin: 0;
   padding: 0;
