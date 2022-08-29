@@ -5,7 +5,7 @@ import { useGlobalState } from "../../Context/GlobalStateProvider";
 export const CardBack = () => {
   const { state } = useGlobalState();
   const data = {
-    cvc: state.cvcNumber === undefined ? "000" : state.cvcNumber,
+    cvc: state?.cvcNumber === undefined ? "000" : state.cvcNumber,
   };
   return (
     <div className={classes.cardBack}>

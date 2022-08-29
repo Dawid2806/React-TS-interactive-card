@@ -7,7 +7,7 @@ import { scheme } from "./Scheme";
 import { useGlobalState } from "../../Context/GlobalStateProvider";
 
 export const Form: React.FC<FormProps> = (props) => {
-  const { setState } = useGlobalState();
+  const { handleSetFormTypes } = useGlobalState();
   const {
     register,
     handleSubmit,
@@ -16,8 +16,8 @@ export const Form: React.FC<FormProps> = (props) => {
     resolver: yupResolver(scheme),
   });
 
-  const onSubmit = (data: Partial<FormTypes>) => {
-    setState((prev) => ({ ...prev, ...data }));
+  const onSubmit = (data: FormTypes) => {
+    handleSetFormTypes(data);
     props.isValidCheck(true);
   };
 

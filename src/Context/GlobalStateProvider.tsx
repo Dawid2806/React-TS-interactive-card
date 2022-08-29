@@ -1,27 +1,20 @@
-import React, {
-  createContext,
-  useState,
-  useContext,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import React, { createContext, useState, useContext } from "react";
 import { FormTypes } from "../components/Form/FormTypes";
 
-const GlobalStateContext = createContext({
-  state: {} as Partial<FormTypes>,
-  setState: {} as Dispatch<SetStateAction<Partial<FormTypes>>>,
-});
+interface CardInfoProvider {
+  state: FormTypes | null;
+  handleSetFormTypes: (formTypes: FormTypes) => void;
+}
 
-const GlobalStateProvider = ({
-  children,
-  value = {} as FormTypes,
-}: {
-  children: React.ReactNode;
-  value?: Partial<FormTypes>;
-}) => {
-  const [state, setState] = useState(value);
+const GlobalStateContext = createContext<CardInfoProvider | null>(null);
+
+const GlobalStateProvider = ({ children }: { children: React.ReactNode }) => {
+  const [state, setState] = useState<FormTypes | null>(null);
+  const handleSetFormTypes = (formTypes: FormTypes) => {
+    setState((prevState) => ({ ...prevState, ...formTypes }));
+  };
   return (
-    <GlobalStateContext.Provider value={{ state, setState }}>
+    <GlobalStateContext.Provider value={{ state, handleSetFormTypes }}>
       {children}
     </GlobalStateContext.Provider>
   );

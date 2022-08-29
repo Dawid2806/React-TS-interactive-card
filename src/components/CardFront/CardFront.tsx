@@ -1,21 +1,19 @@
 import React from "react";
 import classes from "./CardFront.module.css";
 import { useGlobalState } from "../../Context/GlobalStateProvider";
+
 export const CardFront = () => {
   const { state } = useGlobalState();
-
-  const data = {
-    cardNumber:
-      state.cardNumber === undefined
-        ? "0000 0000 0000 0000"
-        : state.cardNumber
-            .toString()
-            .match(/.{1,4}/g)
-            ?.join(" "),
-    name: state.name === undefined ? "Felicia Margaritta" : state.name,
-    month: state.month === undefined ? "0" : state.month,
-    year: state.year === undefined ? "0" : state.year.toString().slice(2, 4),
-  };
+  if (!state) return null;
+  const cardNumber = state.cardNumber
+    ? state.cardNumber
+        .toString()
+        .match(/.{1,4}/g)
+        ?.join(" ")
+    : "0000 0000 0000 0000";
+  const name = state.name ? state.name : "Felicia Margaritta";
+  const month = state.month ? state.month : "0";
+  const year = state.year ? state.year.toString().slice(2, 4) : "0";
   return (
     <div className={classes.cardFront}>
       <div className={classes.chipsContainer}>
@@ -23,11 +21,13 @@ export const CardFront = () => {
         <div className={classes.chipMini}></div>
       </div>
 
-      <span className={classes.cardNumber}>{data.cardNumber}</span>
+      {state?.cardNumber && (
+        <span className={classes.cardNumber}>{cardNumber}</span>
+      )}
       <div className={classes.cardInfo}>
-        <span className={classes.cardName}>{data.name}</span>
+        <span className={classes.cardName}>{name}</span>
         <span className={classes.expiryDate}>
-          {data.month}/{data.year}
+          {month}/{year}
         </span>
       </div>
     </div>
