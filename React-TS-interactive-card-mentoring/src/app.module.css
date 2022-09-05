@@ -1,0 +1,26 @@
+.card_container {
+  position: relative;
+  padding: 2rem 4rem;
+  width: 100vw;
+  background: url("../dist/images/bg-main-mobile.png");
+}
+@media (min-width: 1200px) {
+  .App {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .card_container {
+    background: url("../dist/images/bg-main-desktop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40vw;
+    height: 100vh;
+  }
+  .form {
+    width: 60vw;
+    margin: 0 auto;
+  }
+}

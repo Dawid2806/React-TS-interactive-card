@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(163.95deg, #6348fe 4.74%, #610595 88.83%);
+}
+.check {
+  font-size: 30px;
+  color: white;
+}
+.title {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 26px;
+}
+.text {
+  margin-top: 1rem;
+}
+.button {
+  padding: 0.5rem 8rem;
+  margin-top: 2rem;
+  font-size: 20px;
+  color: white;
+  background-color: #21092f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .container {
+    margin-top: 5rem;
+  }
+}
