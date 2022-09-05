@@ -36,5 +36,3 @@ const useGlobalState = () => {
 };
 
 export { GlobalStateProvider, useGlobalState };
-
-//5354563104462369
